@@ -32,7 +32,8 @@ export async function createUser(data: {
 }): Promise<number> {
     await poolConnect;
     const req = pool.request();
-
+    console.log('Creating user with data:', data);
+    console.log('Creating user with data:', data);
     req
         .input('Username', sql.NVarChar(100), data.username)
         .input('PasswordHash', sql.VarBinary(256), data.passwordHash)
